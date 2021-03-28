@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.yahtzeegame;
+package com.mycompany.yahtzeegameserver;
 
 /**
  *
  * @author MERT
  */
-public class NewClass {
+public class RunMain {
 
     public static void main(String[] args) {
-        System.out.println("asdas");
+        Server myServer = new Server(5000);
+        myServer.Listen();
     }
 
 }
