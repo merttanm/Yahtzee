@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.yahtzeegame;
+package game;
 
 import java.awt.Image;
 import java.io.IOException;
@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import yahtzeeclient.Client;
 
 /**
  *
@@ -44,38 +45,37 @@ public class Game extends javax.swing.JFrame {
             icons_zar1[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
             icons_zar2 = new ImageIcon[6];
-            icons_zar2[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
 
             icons_zar3 = new ImageIcon[6];
-            icons_zar3[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
 
             icons_zar4 = new ImageIcon[6];
-            icons_zar4[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
 
             icons_zar5 = new ImageIcon[6];
-            icons_zar5[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
 
-           
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -213,6 +213,7 @@ public class Game extends javax.swing.JFrame {
         lbl_zar3 = new javax.swing.JLabel();
         lbl_zar4 = new javax.swing.JLabel();
         lbl_zar5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -597,6 +598,13 @@ public class Game extends javax.swing.JFrame {
 
         lbl_zar5.setText("jLabel23");
 
+        jButton1.setText("Oyunu başlat");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -717,7 +725,7 @@ public class Game extends javax.swing.JFrame {
                     .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField80, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jTextField92, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jTextField92, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField94, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jTextField84, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -735,7 +743,9 @@ public class Game extends javax.swing.JFrame {
                     .addComponent(jTextField77, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField90, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField79, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(241, 241, 241)
+                .addGap(40, 40, 40)
+                .addComponent(jButton1)
+                .addGap(128, 128, 128)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_zar5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -755,14 +765,14 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addContainerGap(653, Short.MAX_VALUE)))
+                    .addContainerGap(677, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(200, 200, 200)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addContainerGap(653, Short.MAX_VALUE)))
+                    .addContainerGap(677, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -774,7 +784,9 @@ public class Game extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField92, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextField92, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1))
                                 .addGap(1, 1, 1)
                                 .addComponent(jTextField94, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(9, 9, 9)
@@ -1022,14 +1034,14 @@ public class Game extends javax.swing.JFrame {
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(1, 1, 1)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(390, Short.MAX_VALUE)))
+                    .addContainerGap(391, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(123, 123, 123)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(1, 1, 1)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(390, Short.MAX_VALUE)))
+                    .addContainerGap(391, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1167,6 +1179,28 @@ public class Game extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField87ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        Client.Start("127.0.0.1", 2000);
+        //başlangıç durumları
+
+        lbl_zar1.setIcon(icons_zar1[0]);
+        lbl_zar2.setIcon(icons_zar1[1]);
+        lbl_zar3.setIcon(icons_zar1[1]);
+        lbl_zar4.setIcon(icons_zar1[4]);
+        lbl_zar5.setIcon(icons_zar1[5]);
+        /* btn_connect.setEnabled(false);
+        txt_name.setEnabled(false);
+        btn_pick.setEnabled(false);
+        btn_send_message.setEnabled(false);
+        rbtn_kagit.setEnabled(true);
+        rbtn_makas.setEnabled(true);
+        rbtn_tas.setEnabled(true);
+         */
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1203,6 +1237,7 @@ public class Game extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
