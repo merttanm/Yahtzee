@@ -394,48 +394,64 @@ public class Game extends javax.swing.JFrame {
 
         jLabel9.setText("Game 3");
 
+        jTextField76.setBackground(new java.awt.Color(153, 255, 153));
         jTextField76.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField76ActionPerformed(evt);
             }
         });
 
+        jTextField77.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField78.setBackground(new java.awt.Color(153, 255, 153));
         jTextField78.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField78ActionPerformed(evt);
             }
         });
 
+        jTextField79.setBackground(new java.awt.Color(153, 255, 153));
         jTextField79.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField79ActionPerformed(evt);
             }
         });
 
+        jTextField80.setBackground(new java.awt.Color(153, 255, 153));
         jTextField80.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField80ActionPerformed(evt);
             }
         });
 
+        jTextField81.setBackground(new java.awt.Color(153, 255, 153));
         jTextField81.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField81ActionPerformed(evt);
             }
         });
 
+        jTextField82.setBackground(new java.awt.Color(153, 255, 153));
         jTextField82.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField82ActionPerformed(evt);
             }
         });
 
+        jTextField83.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField84.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField85.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField86.setBackground(new java.awt.Color(153, 255, 153));
         jTextField86.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField86ActionPerformed(evt);
             }
         });
 
+        jTextField87.setBackground(new java.awt.Color(153, 255, 153));
         jTextField87.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField87ActionPerformed(evt);
@@ -444,7 +460,23 @@ public class Game extends javax.swing.JFrame {
 
         jLabel10.setText("Game 4");
 
+        jTextField88.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField89.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField90.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField91.setBackground(new java.awt.Color(153, 255, 153));
+
         jLabel11.setText("Game 4");
+
+        jTextField92.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField93.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField94.setBackground(new java.awt.Color(153, 255, 153));
+
+        jTextField95.setBackground(new java.awt.Color(153, 255, 153));
 
         jLabel2.setText("Upper Selection");
 
