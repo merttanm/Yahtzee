@@ -178,7 +178,7 @@
               <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabel28" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="lbl_zar5" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jTextField32" alignment="0" pref="0" max="32767" attributes="0"/>
@@ -186,10 +186,10 @@
                           <Component id="jTextField18" alignment="0" min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="jLabel23" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jLabel26" min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="jLabel25" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jLabel27" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="lbl_zar1" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="lbl_zar2" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="lbl_zar3" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="lbl_zar4" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -268,15 +268,15 @@
                               <Component id="jTextField90" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel23" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="lbl_zar1" min="-2" pref="51" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jLabel26" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="lbl_zar2" min="-2" pref="51" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              <Component id="jLabel25" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="lbl_zar3" min="-2" pref="51" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jLabel27" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="lbl_zar4" min="-2" pref="51" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel28" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="lbl_zar5" min="-2" pref="51" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -1278,27 +1278,27 @@
         <Property name="text" type="java.lang.String" value="Grand Total"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel23">
+    <Component class="javax.swing.JLabel" name="lbl_zar1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel23"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel26">
+    <Component class="javax.swing.JLabel" name="lbl_zar2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel25"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel25">
+    <Component class="javax.swing.JLabel" name="lbl_zar3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel23"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel27">
+    <Component class="javax.swing.JLabel" name="lbl_zar4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel25"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel28">
+    <Component class="javax.swing.JLabel" name="lbl_zar5">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel23"/>
       </Properties>

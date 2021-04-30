@@ -5,17 +5,81 @@
  */
 package com.mycompany.yahtzeegame;
 
+import java.awt.Image;
+import java.io.IOException;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author MERT
  */
 public class Game extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Game
-     */
+    public static Game ThisGame;
+    ImageIcon icons_zar1[];
+    ImageIcon icons_zar2[];
+    ImageIcon icons_zar3[];
+    ImageIcon icons_zar4[];
+    ImageIcon icons_zar5[];
+    ImageIcon icons[];
+    Random rand;
+
     public Game() {
         initComponents();
+        ThisGame = this;
+        rand = new Random();
+
+        try {
+
+            icons_zar1 = new ImageIcon[6];
+            icons_zar1[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+
+            icons_zar2 = new ImageIcon[6];
+            icons_zar2[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+
+            icons_zar3 = new ImageIcon[6];
+            icons_zar3[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+
+            icons_zar4 = new ImageIcon[6];
+            icons_zar4[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+
+            icons_zar5 = new ImageIcon[6];
+            icons_zar5[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+
+           
+        } catch (IOException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -144,11 +208,11 @@ public class Game extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        lbl_zar1 = new javax.swing.JLabel();
+        lbl_zar2 = new javax.swing.JLabel();
+        lbl_zar3 = new javax.swing.JLabel();
+        lbl_zar4 = new javax.swing.JLabel();
+        lbl_zar5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -523,15 +587,15 @@ public class Game extends javax.swing.JFrame {
 
         jLabel37.setText("Grand Total");
 
-        jLabel23.setText("jLabel23");
+        lbl_zar1.setText("jLabel23");
 
-        jLabel26.setText("jLabel25");
+        lbl_zar2.setText("jLabel25");
 
-        jLabel25.setText("jLabel23");
+        lbl_zar3.setText("jLabel23");
 
-        jLabel27.setText("jLabel25");
+        lbl_zar4.setText("jLabel25");
 
-        jLabel28.setText("jLabel23");
+        lbl_zar5.setText("jLabel23");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -674,16 +738,16 @@ public class Game extends javax.swing.JFrame {
                 .addGap(241, 241, 241)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_zar5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(112, 112, 112)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_zar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_zar2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_zar3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_zar4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -752,15 +816,15 @@ public class Game extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField90, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_zar1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(17, 17, 17)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_zar2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(16, 16, 16)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_zar3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(17, 17, 17)
-                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbl_zar4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(lbl_zar5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1154,12 +1218,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
@@ -1261,5 +1320,10 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField93;
     private javax.swing.JTextField jTextField94;
     private javax.swing.JTextField jTextField95;
+    private javax.swing.JLabel lbl_zar1;
+    private javax.swing.JLabel lbl_zar2;
+    private javax.swing.JLabel lbl_zar3;
+    private javax.swing.JLabel lbl_zar4;
+    private javax.swing.JLabel lbl_zar5;
     // End of variables declaration//GEN-END:variables
 }
