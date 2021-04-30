@@ -19,8 +19,15 @@ import yahtzeeclient.Client;
  * @author MERT
  */
 public class Game extends javax.swing.JFrame {
+    //framedeki komponentlere erişim için satatik oyun değişkeni
 
     public static Game ThisGame;
+    //ekrandaki resim değişimi için timer yerine thread
+    public Thread tmr_slider;
+    //karşı tarafın seçimi seçim -1 deyse seçilmemiş
+    public int RivalSelection = -1;
+    //benim seçimim seçim -1 deyse seçilmemiş
+    public int myselection = -1;
     ImageIcon icons_zar1[];
     ImageIcon icons_zar2[];
     ImageIcon icons_zar3[];
@@ -36,45 +43,45 @@ public class Game extends javax.swing.JFrame {
 
         try {
 
-            icons_zar1 = new ImageIcon[6];
-            icons_zar1[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar1[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar1[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar1[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar1[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar1[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1 = new ImageIcon[7];
+            icons_zar1[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_one.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_two.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_three.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_four.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_five.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar1[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_six.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
-            icons_zar2 = new ImageIcon[6];
-            icons_zar2[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar2[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar2.getWidth(), lbl_zar2.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2 = new ImageIcon[7];
+            icons_zar2[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_one.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_two.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_three.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_four.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_five.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar2[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_six.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
-            icons_zar3 = new ImageIcon[6];
-            icons_zar3[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar3[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar3.getWidth(), lbl_zar3.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3 = new ImageIcon[7];
+            icons_zar3[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_one.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_two.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_three.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_four.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_five.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar3[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_six.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
-            icons_zar4 = new ImageIcon[6];
-            icons_zar4[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar4[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar4.getWidth(), lbl_zar4.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4 = new ImageIcon[7];
+            icons_zar4[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_one.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_two.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_three.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_four.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_five.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar4[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_six.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
-            icons_zar5 = new ImageIcon[6];
-            icons_zar5[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar1.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar2.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar3.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar4.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar5.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
-            icons_zar5[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar6.png"))).getImage().getScaledInstance(lbl_zar5.getWidth(), lbl_zar5.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5 = new ImageIcon[7];
+            icons_zar5[0] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_one.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[1] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_two.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[2] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_three.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[3] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_four.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[4] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_five.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
+            icons_zar5[5] = new ImageIcon(new ImageIcon(ImageIO.read(this.getClass().getClassLoader().getResource("images/zar_six.png"))).getImage().getScaledInstance(lbl_zar1.getWidth(), lbl_zar1.getHeight(), Image.SCALE_DEFAULT));
 
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
